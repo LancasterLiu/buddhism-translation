@@ -26,8 +26,8 @@ driver=webdriver.Chrome(driver_path,options=options)
 chinese_texts = []
 english_texts = []
 i=1
-while i<92:
-    link="https://jatakastories.div.ed.ac.uk/stories-in-text/liudu-ji-jing-t152-%d"%i
+while i<41:
+    link="https://jatakastories.div.ed.ac.uk/stories-in-text/avadanasataka-%d"%i
     # headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"}
     # r=get(link,headers=headers)
     # 找到文本元素
@@ -46,8 +46,11 @@ while i<92:
     )
     edition_text = edition_element.text.strip()
     chinese_texts.append(edition_text)
-    if i==73:
-        i=81
+    # i+=1
+    if i==20:
+        i=22
+    elif i==9:
+        i=11
     else:
         i+=1
 
@@ -64,5 +67,5 @@ while i<92:
 
 # 保存
 df = DataFrame({'Sanskrit': chinese_texts, 'english': english_texts})
-csv_filename = os.path.join("Āryaśūra's Jātakamālā" + ".csv")
+csv_filename = os.path.join("Jataka Stories\sanskrit\Avadānaśataka.csv")
 df.to_csv(csv_filename, index=False)
