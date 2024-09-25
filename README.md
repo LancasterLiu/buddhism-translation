@@ -1,6 +1,8 @@
 # buddhist-translation
 ## introduction
 This is a data extraction based of online content using python(spider).
+
+And there's no restriction for usage, just remember to cite :D
 ## structure
 - ctext
   - **without en.csv** lists all the parts without english translation.
